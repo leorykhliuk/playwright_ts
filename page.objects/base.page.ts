@@ -1,7 +1,7 @@
 import { Locator, Page } from "@playwright/test";
 
 export class PolymerBasePage {
-    private readonly  page: Page;
+    private readonly page: Page;
     readonly logo: Locator;
     readonly womenMenu: Locator;  
     readonly womenDropDownList: Locator;
