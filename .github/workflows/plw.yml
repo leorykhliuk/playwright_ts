@@ -1,0 +1,22 @@
+name: Playwright Tests on Chrome
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  playwright-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Install Playwright
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18.x'
+    - name: Install Playwright dependencies
+      run: |
+        npm install playwright
+        npx playwright install chrome
+    - name: Run Playwright tests
+      run: npx playwright test
